@@ -1,10 +1,16 @@
 - name: condition statements
   hosts: dev
   vars:
-   number: 1
+   number: 100
 
   tasks:
     - name: printing the numbers
       ansible.builtin.debug:
-       msg: "Number is greater then  {{number}}"
+       msg: "Number is less then  {{number}}"
       when: number <10
+  
+
+    - name: printing the numbers
+      ansible.builtin.debug:
+       msg: "Number is less then  {{number}}"
+      when: number > 10

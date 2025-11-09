@@ -1,7 +1,7 @@
 - name: task level variables 
   hosts: developer
   vars: 
-  course: aws devops
+   course: aws devops
 
 
   tasks:

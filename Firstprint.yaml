@@ -3,4 +3,4 @@
   tasks:
     - name: i am writing first file
       ansible.builtin.debug:
-      msg : "priting the tasks"
+       msg : "priting the tasks"

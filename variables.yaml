@@ -1,11 +1,11 @@
 - name: delcaring the varaibles
-  hosts : developer
+  hosts: developer
   vars:
-   course : devops
-   fee : 20
-   name : eswar
+   course: devops
+   fee: 20
+   name: eswar
 
 - name: printing the above variables
-  tasks :
+  tasks:
    ansible.builtin.debug:
-    msg : course {{course}} , feege {{fee}} , name {{name}} 
+    msg: course {{course}} , feege {{fee}} , name {{name}} 

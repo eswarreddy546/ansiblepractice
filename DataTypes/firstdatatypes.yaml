@@ -9,5 +9,5 @@
   tasks:
    - name: here declaring the variables here
      ansible.builtin.debug:
-      msg: "course details {{course}} {{fee}} tools are {{tools}}"
+      msg: "course details {{course}} {{fee}} tools are {{Reddy}}"
 

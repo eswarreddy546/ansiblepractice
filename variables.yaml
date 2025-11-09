@@ -1,4 +1,4 @@
-- name : delcaring the varaibles
+- name: delcaring the varaibles
   hosts : developer
   vars:
    course : devops

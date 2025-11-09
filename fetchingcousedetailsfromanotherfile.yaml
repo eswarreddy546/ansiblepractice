@@ -6,4 +6,4 @@
   tasks: 
    - name: fetching data from one file to another file
      ansible.builtin.debug:
-      msg: "{{course}}, {{feege}},{{duration}}"
+      msg: "{{course}}, {{fee}},{{duration}}"

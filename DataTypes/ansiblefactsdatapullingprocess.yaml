@@ -1,6 +1,7 @@
 - name: ansible facts data pulling process
   hosts: dev
-  vars: ansible_facts
+  vars: 
+   ansible_facts
    
 
   tasks:

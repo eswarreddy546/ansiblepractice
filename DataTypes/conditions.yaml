@@ -12,5 +12,5 @@
 
     - name: printing the numbers
       ansible.builtin.debug:
-       msg: "Number is less then  {{number}}"
+       msg: "Number is greater then   {{number}}"
       when: number > 10

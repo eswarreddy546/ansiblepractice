@@ -7,5 +7,5 @@
 
 - name: printing the above variables
   tasks :
-  ansible.builtin.debug:
-   msg : course {{course}} , feege {{fee}} , name {{name}} 
+   ansible.builtin.debug:
+    msg : course {{course}} , feege {{fee}} , name {{name}} 

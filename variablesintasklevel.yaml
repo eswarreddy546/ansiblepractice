@@ -5,9 +5,9 @@
 
 
   tasks:
-   - name: passing task level variables
-     vars:
-      course: full stack
-      ansible.builtin.debug:
+    - name: passing task level variables
+      vars:
+       course: full stack
+       ansible.builtin.debug:
         msg: "{{course}}"
   

@@ -17,5 +17,5 @@
 
     - name: printing the numbers
       ansible.builtin.debug:
-         msg: "Number is greater then   {{number}}"
+         msg: "Number is equal to 100   {{number}}"
       when: number == 100

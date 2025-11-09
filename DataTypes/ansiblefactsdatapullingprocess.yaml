@@ -1,9 +1,7 @@
 - name: ansible facts data pulling process
   hosts: dev
-  vars: ansible_facts
-   
 
   tasks:
-   - name: printing the ansible facts data
-     ansible.builtin.debug:
-      msg: " printing the ansible facts data{{ ansible_facts}}"
+    - name: printing the ansible facts data
+      ansible.builtin.debug:
+        var: ansible_facts

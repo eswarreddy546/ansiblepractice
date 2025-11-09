@@ -1,7 +1,7 @@
 - name: condition statements
   hosts: dev
   vars:
-   number: 10
+   number: 1
 
   tasks:
     - name: printing the numbers

@@ -1,0 +1,9 @@
+- name: condition statements
+  hosts: dev
+  vars:
+   number: 10
+
+   tasks:
+    - name: printing the numbers
+      ansible.builtin.debug:
+       msg: "here we printing the numbers {{number}}"

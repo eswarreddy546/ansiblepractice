@@ -9,3 +9,5 @@
    - name: printing the above variables
      ansible.builtin.debug:
       msg: course {{course}} , feege {{fee}} , name {{name}} 
+# this is called as a variable level because we are declaring the varaibles in top 
+ # varaible section right that why we are called as the variable level.

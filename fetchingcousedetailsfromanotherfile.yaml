@@ -1,5 +1,5 @@
 - name: fetching course details from another page
-  hosts: developers
+  hosts: developer
   vars_files:
    course.yaml
 

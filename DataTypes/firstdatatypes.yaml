@@ -6,12 +6,12 @@
   
    Reddy: ["Hi eswar","How are you", "I am fine"]
 
-   concepts:
+   con:
      code: java
      prgramme: python
 
   tasks:
    - name: here declaring the variables here
      ansible.builtin.debug:
-      msg: "course details {{course}} {{fee}} tools are {{Reddy}} concepts are {{concepts}}"
+      msg: "course details {{course}} {{fee}} tools are {{Reddy}} concepts are {{con}}"
 

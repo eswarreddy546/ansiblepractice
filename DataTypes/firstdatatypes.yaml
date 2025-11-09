@@ -5,6 +5,10 @@
    fee: 2k
   
    Reddy: ["Hi eswar","How are you", "I am fine"]
+   
+   concepts:
+     code: java
+     prgramme: python
 
   tasks:
    - name: here declaring the variables here

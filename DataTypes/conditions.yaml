@@ -6,4 +6,5 @@
   tasks:
     - name: printing the numbers
       ansible.builtin.debug:
-       msg: "here we printing the numbers {{number}}"
+       msg: "Number is greater then  {{number}}"
+      when: number <10

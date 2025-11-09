@@ -1,0 +1,11 @@
+- name: task level variables 
+  hosts: developer
+  vars: 
+   course: aws devops
+  tasks:
+
+   - name: passing task level variables
+     course: full stack
+     ansible.builtin.debug:
+      msg: "{{course}}"
+  

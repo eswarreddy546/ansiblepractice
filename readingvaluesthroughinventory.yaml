@@ -1,0 +1,6 @@
+- name: reading through inventoy files through the values
+  hosts: developer
+  tasks:
+   - name: vales declare inside the inventory
+     ansible.builtin.debug:
+      msg: "{{course}},{{fee}},{{duration}}"

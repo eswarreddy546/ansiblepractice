@@ -1,0 +1,9 @@
+- name: fetching course details from another page
+  hosts: developers
+  vars_files:
+   course.yaml
+
+  tasks: 
+   - name: fetching data from one file to another file
+     ansible.builtin.debug:
+      msg: "{{course}}, {{feege}},{{duration}}"

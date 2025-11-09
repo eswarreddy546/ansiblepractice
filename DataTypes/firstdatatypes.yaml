@@ -5,7 +5,7 @@
    fee: 2k
   
    Reddy: ["Hi eswar","How are you", "I am fine"]
-   
+
    concepts:
      code: java
      prgramme: python
@@ -13,5 +13,5 @@
   tasks:
    - name: here declaring the variables here
      ansible.builtin.debug:
-      msg: "course details {{course}} {{fee}} tools are {{Reddy}}"
+      msg: "course details {{course}} {{fee}} tools are {{Reddy}} concepts are {{concepts}}"
 

@@ -1,0 +1,10 @@
+- name: converting upper to lower and lower to upper
+  hosts: dev
+  vars:
+   Name: Eswar Reddy
+
+
+  tasks:
+    - name: here we can converting upper to lower and lower to upper
+      ansible.builtin.debug:
+      msg: "{{Name | upper}}"

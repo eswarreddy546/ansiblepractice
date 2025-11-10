@@ -3,9 +3,9 @@
   become: yes
 
   tasks:
-    - name: converting the data from yaml to json
-      ansible.builtin.set_fact:
-       student.yaml "{{lookup('file',student.yaml)| from_yaml}}
+     - name: converting the data from yaml to json
+       ansible.builtin.set_fact:
+        student.yaml "{{lookup('file',student.yaml)| from_yaml}}
 
-      ansible.builtin.debug:
-       msg: "{{studemt.yaml |  to_json}}"
+       ansible.builtin.debug:
+        msg: "{{studemt.yaml |  to_json}}"

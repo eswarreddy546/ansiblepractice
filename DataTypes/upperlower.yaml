@@ -4,7 +4,7 @@
    Name: Eswar Reddy
    Course: JAVA
    ip_address: "172.98.8.0"
-   ipaddress: "200.900.20.100"
+   ip_addresss: "200.900.20.100"
 
 
   tasks:
@@ -24,4 +24,4 @@
 
     - name: checking ip is corrct or not
       ansible.builtin.debug:
-       msg: "{{ipaddress | ansible.utils.ipv4}}"
+       msg: "{{ipaddresss | ansible.utils.ipv4}}"

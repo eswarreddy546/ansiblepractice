@@ -4,7 +4,7 @@
 
   tasks:
      - name: i am writing and installing basic programming
-       ansible.builtin.pacakage:
+       ansible.builtin.pakage:
         msg: "{{item}}"
 
        loop:

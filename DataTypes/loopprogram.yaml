@@ -1,0 +1,13 @@
+- name: loop programme i am writing
+  hosts: dev
+  become: yes
+
+  tasks:
+    - name: i am writing and installing basic programming
+      ansible.builtin.pacakage:
+       msg: "{{item}}"
+
+       loop:
+         - {name: "nginx", state: "latest"}
+         - {name: "python", state: "latest"}
+         - {name: "java" , state: "latest" }

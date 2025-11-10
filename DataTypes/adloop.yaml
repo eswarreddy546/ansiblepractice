@@ -7,7 +7,10 @@
        name: "{{item.name}}"
        state: "{{item.state}}"
 
-      loop:
-       - {name: "nginx", state: "absent" }
-       - {name: "mysql" , state: "absent"}
-     
+      # loop:
+      #  - {name: "nginx", state: "absent" }
+      #  - {name: "mysql" , state: "absent"}  this is for unstall the two commands
+
+        # loop:
+        # - {name: "nginx", state: "latest" }
+        # - {name: "mysql" , state: "latest"} this is used for install the pacakages:

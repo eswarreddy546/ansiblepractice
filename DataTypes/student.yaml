@@ -1,0 +1,28 @@
+student:
+  name: "Eswar Reddy"
+  id: 101
+  age: 23
+  gender: "Male"
+  email: "eswar.reddy@example.com"
+  phone: "+91-9876543210"
+  course: "DevOps"
+  subjects:
+    - "Linux"
+    - "AWS"
+    - "Docker"
+    - "Kubernetes"
+    - "Jenkins"
+    - "Ansible"
+  duration: "120 days"
+  trainer: "Rajesh Kumar"
+  location: "Hyderabad"
+  batch_time: "7:00 AM to 9:00 AM"
+  fee: 20000
+  paid: true
+  rating: 4.8
+  feedback: "Very active and quick learner"
+  address:
+    street: "Plot No. 45, Ameerpet"
+    city: "Hyderabad"
+    pincode: 500016
+    state: "Telangana"

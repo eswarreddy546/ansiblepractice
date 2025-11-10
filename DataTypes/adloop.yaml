@@ -1,6 +1,6 @@
 - name: advanced loop programme
   hosts: dev
-
+  become: yes
   tasks:
     - name: advanced loop programming
       ansible.builtin.package:

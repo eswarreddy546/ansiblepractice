@@ -3,7 +3,7 @@
   vars:
    Name: Eswar Reddy
    Course: JAVA
-   ip address: "172.98.8.0"
+   ip_address: "172.98.8.0"
 
 
   tasks:

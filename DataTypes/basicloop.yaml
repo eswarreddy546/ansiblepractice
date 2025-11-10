@@ -1,5 +1,6 @@
 - name: basic loop staructure 
   hosts: dev
+  becomes: yes
   tasks:
    - name: i am writing basic loop structure
      ansible.builtin.debug:

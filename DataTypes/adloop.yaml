@@ -1,0 +1,13 @@
+- name: advanced loop programme
+  hosts: dev
+
+  tasks:
+    - name: advanced loop programming
+      ansible.builtin.package:
+       name: "{{item.name}}"
+       state: "{{latest.state}}"
+
+      loop:
+       - {name: "nginx", state: "absent" }
+       - {name: "mysql" , state: "absent"}
+     

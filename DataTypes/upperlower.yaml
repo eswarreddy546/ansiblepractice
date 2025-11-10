@@ -24,4 +24,4 @@
 
     - name: checking ip is corrct or not
       ansible.builtin.debug:
-       msg: "{{ipaddress | ansible.utils.ipv4}}"
+       msg: "{{ip_address | ansible.utils.ipv4}}"

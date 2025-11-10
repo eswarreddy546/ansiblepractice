@@ -1,16 +1,15 @@
 - name: basic loop staructure 
   hosts: dev
-  becomes: yes
+  become: yes
   tasks:
-
-  - name: i am writing basic loop structure
-    ansible.builtin.debug:
-     msg: "Hello {{item}}"
+    - name: i am writing basic loop structure
+      ansible.builtin.debug:
+       msg: "Hello {{item}}"
     
-    loop:
-     - eswar
-     - reddy
-     - vatti
+      loop:
+       - eswar
+       - reddy
+       - vatti
 
 
 

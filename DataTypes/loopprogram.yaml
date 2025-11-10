@@ -9,5 +9,5 @@
         state: latest
 
        loop:
-        - {name: "nginx", state: "latest"}
-        - {name: "mysql", state: "latest"}
+       - nginx
+       - mysql

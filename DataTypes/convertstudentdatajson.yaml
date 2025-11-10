@@ -11,8 +11,8 @@
       ansible.builtin.debug:
         msg: "{{ student_data | to_json }}"
 
-    - name: save json to file
+    - name: save json to file (on control node)
       ansible.builtin.copy:
-       dest: ./ student_data.json
-
-       content: "{{student_yaml | to_nice_json}}"
+        dest: ./student_data.json
+        content: "{{ student_data | to_nice_json }}"
+      delegate_to: localhost

@@ -4,7 +4,7 @@
 
   tasks:
     - name: here i first excute the shell 
-      ansible.builtin.shell: cat/etc/passwd | grep root
+      ansible.builtin.command: cat/etc/passwd | grep root
       register: outputt_fun
 
     - name: here i am printing the above one

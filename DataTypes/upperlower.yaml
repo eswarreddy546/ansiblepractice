@@ -12,4 +12,4 @@
 
     - name: here we can convert upper to lower
       ansible.builtin.debug:
-       msg: "{{course | lower }}"
+       msg: "{{Course | lower }}"

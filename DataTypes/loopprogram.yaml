@@ -3,9 +3,9 @@
   become: yes
 
   tasks:
-    - name: i am writing and installing basic programming
-      ansible.builtin.pacakage:
-       msg: "{{item}}"
+     - name: i am writing and installing basic programming
+       ansible.builtin.pacakage:
+        msg: "{{item}}"
 
        loop:
          - {name: "nginx", state: "latest"}

@@ -2,9 +2,14 @@
   hosts: dev
   vars:
    Name: Eswar Reddy
+   Course: JAVA
 
 
   tasks:
-    - name: here we can converting upper to lower and lower to upper
+    - name: here we can converting lower to upper
       ansible.builtin.debug:
        msg: "{{Name | upper}}"
+
+    - name: here we can convert upper to lower
+      ansible.builtin.debug:
+       msg: "{{course | lower }}"

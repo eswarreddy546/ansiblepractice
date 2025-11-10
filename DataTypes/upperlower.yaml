@@ -18,4 +18,4 @@
 
     - name: cross checking the ip
       ansible.builtin.debug:
-       msg: "{{ip address | ansible.utils.ipv4}}"
+       msg: "{{ip_address | ansible.utils.ipv4}}"

@@ -3,6 +3,7 @@
   vars:
    Name: Eswar Reddy
    Course: JAVA
+   ip address: "172.98.8.0"
 
 
   tasks:
@@ -13,3 +14,8 @@
     - name: here we can convert upper to lower
       ansible.builtin.debug:
        msg: "{{Course | lower }}"
+
+
+    - name: cross checking the ip
+      ansible.builtin.debug:
+       msg: {{ip address | ansible.utils.ipv4}}

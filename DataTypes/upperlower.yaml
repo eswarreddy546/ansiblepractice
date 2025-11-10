@@ -3,8 +3,8 @@
   vars:
    Name: Eswar Reddy
    Course: JAVA
-   ip_address: "172.98.8.0"
-   ip_addresss: "200.900.20.100"
+   #ip_address: "172.98.8.0"
+   ip_address: "200.900.20.100"
 
 
   tasks:
@@ -17,11 +17,11 @@
        msg: "{{Course | lower }}"
 
 
-    - name: cross checking the ip
-      ansible.builtin.debug:
-       msg: "{{ip_address | ansible.utils.ipv4}}"
+    # - name: cross checking the ip
+    #   ansible.builtin.debug:
+    #    msg: "{{ip_address | ansible.utils.ipv4}}"
 
 
     - name: checking ip is corrct or not
       ansible.builtin.debug:
-       msg: "{{ipaddresss | ansible.utils.ipv4}}"
+       msg: "{{ipaddress | ansible.utils.ipv4}}"

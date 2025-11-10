@@ -4,8 +4,9 @@
 
   tasks:
      - name: i am writing and installing basic programming
-       ansible.builtin.pakage:
-        msg: "{{item}}"
+       ansible.builtin.package:
+        name: "{{item}}"
+        state: latest
 
        loop:
         - {name: "nginx", state: "latest"}

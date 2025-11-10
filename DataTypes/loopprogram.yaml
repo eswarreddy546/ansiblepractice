@@ -8,6 +8,6 @@
         msg: "{{item}}"
 
        loop:
-         - {name: "nginx", state: "latest"}
-         - {name: "python", state: "latest"}
-         - {name: "java" , state: "latest" }
+        - {name: "nginx", state: "latest"}
+        - {name: "python", state: "latest"}
+        - {name: "java" , state: "latest" }

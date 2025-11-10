@@ -1,0 +1,13 @@
+- name: shellvscommand
+  hosts: dev
+  become: yes
+
+  tasks:
+    - name: here i first excute the shell 
+      ansible.builtin.shell: cat/etc/passwd | grep root
+      register: outputt_fun
+
+    - name: here i am printing the above one
+      ansible.builtin.debug:
+       msg:"{{output_fun}}"
+       

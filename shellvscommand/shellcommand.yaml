@@ -4,10 +4,10 @@
 
   tasks:
     - name: here i first excute the shell 
-      ansible.builtin.shell: cat/etc/passwd | grep root
+      ansible.builtin.shell: cat /etc/passwd | grep root
       register: outputt_fun
 
     - name: here i am printing the above one
       ansible.builtin.debug:
-       msg:"{{output_fun}}"
+       msg: "{{output_fun}}"
        

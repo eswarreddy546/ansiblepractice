@@ -1,0 +1,29 @@
+- name: creating a ec2 instaces through 
+  hosts: dev
+  become: yes
+  vars:
+    ami_id: "ami-09c813fb71547fc4f"
+    sg_id: "sg-0def8440e04260e46"
+    hosted_zone: "Z04942961NBG75UTT7C0L"
+    Domain_name: "eswar.xyz"
+    instance:
+      - mango
+
+  tasks:
+    - name: now i am creating ec2 instances
+      amazon.aws.ec2_instance: 
+       instance_type: c5.large
+       security_group: "{{sg_id}}"
+       image_id: "{{ami_id}}"
+       name: "{{item}}"
+
+      loop: "{{instance}}"
+      register: ec2_output
+
+    
+    - name: now i am printing the output
+      ansible.builtin.debug:
+       msg: "{{ec2_output}}"
+
+
+       

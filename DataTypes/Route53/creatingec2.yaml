@@ -2,7 +2,6 @@
   hosts: dev
   connection: local
   become: yes
-  gather_facts: no
   vars:
     ami_id: "ami-09c813fb71547fc4f"
     sg_id: "sg-0def8440e04260e46"

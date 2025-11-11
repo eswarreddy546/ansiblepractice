@@ -6,6 +6,7 @@
     sg_id: "sg-0def8440e04260e46"
     hosted_zone: "Z04942961NBG75UTT7C0L"
     Domain_name: "eswar.xyz"
+    region: "us-east-1"
     instance:
      - mango
 

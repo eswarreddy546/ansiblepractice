@@ -1,56 +1,33 @@
-- name: creating a ec2 instance through
-  hosts: dev
-  connection: local
-  become: yes
-  vars:
-    ami_id: "ami-09c813fb71547fc4f"
-    sg_id: "sg-0def8440e04260e46"
-    hosted_zone: "Z04942961NBG75UTT7C0L"
-    Domain_name: "eswar.xyz"
-    region: "us-east-1"
-    instance:
-      - mango
-
-  tasks:
-    - name: now i am creating ec2 instances
-      amazon.aws.ec2_instance: 
-        instance_type: c5.large
-        security_group: "{{ sg_id }}"
-        image_id: "{{ ami_id }}"
-        name: "{{ item }}"
-        region: "{{ region }}"         # ✅ required field
-      loop: "{{ instance }}"
-      register: ec2_output
-
-    - name: now i am printing the output
-      ansible.builtin.debug:
-        var: ec2_output
-
        
-# - name: create ec2 and r53
-#   hosts: local
-#   connection: local
-#   vars:
-#     ami_id: ami-09c813fb71547fc4f
-#     sg_id: sg-0def8440e04260e46 # replace with your SG ID
-#     zone_id: "Z04942961NBG75UTT7C0L" # replace with your ID
-#     domain_name: "eswar.xyz"
-#     instances:
-#       - mango
-#     # we can pass instances through command line using -e
-#     # instances: 
-#     # - mongodb
-#     # - redis
-#     # - mysql
-#     # - rabbitmq
-#   tasks:
-#   - name: create ec2 instance
-#     amazon.aws.ec2_instance:
-#       name: "{{ item }}"
-#       instance_type: t3.micro
-#       security_group: "{{ sg_id }}"
-#       image_id: "{{ ami_id }}"
-#       tags:
-#         Name: "{{ item }}"
-#     loop: "{{ instances }}"
-#     register: ec2_output
+- name: create ec2 and r53
+  hosts: local
+  connection: local
+  vars:
+    ami_id: ami-09c813fb71547fc4f
+    sg_id: sg-0def8440e04260e46 # replace with your SG ID
+    zone_id: "Z04942961NBG75UTT7C0L" # replace with your ID
+    domain_name: "eswar.xyz"
+    instances:
+      - mango
+    # we can pass instances through command line using -e
+    # instances: 
+    # - mongodb
+    # - redis
+    # - mysql
+    # - rabbitmq
+  tasks:
+  - name: create ec2 instance
+    amazon.aws.ec2_instance:
+      name: "{{ item }}"
+      instance_type: t3.micro
+      security_group: "{{ sg_id }}"
+      image_id: "{{ ami_id }}"
+      tags:
+        Name: "{{ item }}"
+    loop: "{{ instances }}"
+    register: ec2_output
+
+
+  - name: print the ec2_output
+    ansible.builtin.debug:
+      msg: "{{ ec2_output }}"

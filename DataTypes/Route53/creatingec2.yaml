@@ -7,7 +7,7 @@
     hosted_zone: "Z04942961NBG75UTT7C0L"
     Domain_name: "eswar.xyz"
     instance:
-      - mango
+     - mango
 
   tasks:
     - name: now i am creating ec2 instances

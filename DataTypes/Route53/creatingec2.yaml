@@ -37,5 +37,5 @@
     ansible.builtin.debug:
      msg: "{{item.instance[0].public_ip_address}}"
 
-    loop: "{{ec2_output.result}}"
+    loop: "{{ec2_output.results}}"
      

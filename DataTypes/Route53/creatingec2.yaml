@@ -36,6 +36,8 @@
     sg_id: sg-0def8440e04260e46 # replace with your SG ID
     zone_id: "Z04942961NBG75UTT7C0L" # replace with your ID
     domain_name: "eswar.xyz"
+    instances:
+      - mango
     # we can pass instances through command line using -e
     # instances: 
     # - mongodb

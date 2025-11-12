@@ -13,6 +13,11 @@
        name: mongodb-org -y
        state: present
 
+    - name: Replace old hostname with new hostname (requires Ansible >= 2.4)
+      ansible.builtin.replace:
+        path: /etc/mongod.conf
+        regexp: '127.0.0.1'
+        replace: '0.0.0.0 '
 
     - name: Start service foo, based on running process /usr/bin/foo
       ansible.builtin.service:

@@ -7,3 +7,14 @@
       ansible.builtin.copy:
         src: mongo.repo
         dest: etc/yum.repos.d/mongo.repo
+
+    - name: Use the dnf package manager to install httpd
+      ansible.builtin.package:
+       name: mongodb-org -y
+       state: present
+
+
+    - name: Start service foo, based on running process /usr/bin/foo
+      ansible.builtin.service:
+        name: mongodb
+        state: started

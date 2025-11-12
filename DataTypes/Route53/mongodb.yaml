@@ -1,0 +1,9 @@
+- name: creating the mongodb
+  hosts: mongodb
+  become: yes
+
+  tasks:
+    - name: here we are creating the mondodb
+      ansible.builtin.copy:
+        src: mongo.repo
+        dest: etc/yum.repos.d/mongo.repo

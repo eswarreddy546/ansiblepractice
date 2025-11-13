@@ -1,0 +1,31 @@
+- name: now i am atarting the rabbitmq
+  hosts: Rabbitmq
+  become: yes
+   
+  tasks: 
+    - name: moving we are using the copy data
+      ansible.builtin.copy:
+      src: rabbitmq.repo
+      dest: /etc/yum.repos.d/rabbitmq.repo 
+
+    - name: now i am installing rabbitmq
+      ansible.buildin.package:
+       name: rabbitmq-server
+       state: present
+  
+    - name: Enable service httpd, and not touch the state
+      ansible.builtin.service:
+       name: rabbitmq-server
+       enabled: yes
+      state: started
+ 
+
+    - name: here we are creating rabbitmq user
+      community.rabbitmq.rabbitmq_user:
+      user: roboshop 
+      password: roboshop123
+      vhost: /
+      configure_priv: .*
+      read_priv: .*
+      write_priv: .*
+      state: present

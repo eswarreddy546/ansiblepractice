@@ -10,6 +10,7 @@
       - mongodb
       - mysql
       - redis
+      - rabbitmq
     # we can pass instances through command line using -e
     # instances: 
     # - mongodb

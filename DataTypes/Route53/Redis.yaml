@@ -7,11 +7,12 @@
       ansible.builtin.command: dnf module disable redis -y
 
     - name: another command here we running
-      ansible.builtin.command: 
+      ansible.builtin.command: dnf module enable redis:7 -y
+
 
     - name: here we installing redis here
       ansible.builtin.package:
-       name: install redis -y 
+       name: install redis 
        state: latest
     
     - name: Replace old hostname with new hostname (requires Ansible >= 2.4)
@@ -33,7 +34,7 @@
        line: 'protected-mode no'
 
    
-    - name: Start and enable MongoDB service
+    - name: Start and enable redis service
       ansible.builtin.service:
         name: redis
         state: started

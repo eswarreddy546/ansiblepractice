@@ -1,26 +1,26 @@
-- name: creating the mongodb
+- name: Creating MongoDB
   hosts: mongodb
   become: yes
 
   tasks:
-    - name: here we are creating the mondodb
+    - name: Copy MongoDB repo file
       ansible.builtin.copy:
         src: mongo.repo
-        dest: etc/yum.repos.d/mongo.repo
+        dest: /etc/yum.repos.d/mongo.repo
 
-    - name: Use the dnf package manager to install httpd
-      ansible.builtin.package:
-       name: mongodb-org -y
-       state: present
+    - name: Install MongoDB using dnf
+      ansible.builtin.dnf:
+        name: mongodb-org
+        state: present
 
-    - name: Replace old hostname with new hostname (requires Ansible >= 2.4)
+    - name: Update MongoDB config to allow external connections
       ansible.builtin.replace:
         path: /etc/mongod.conf
-        regexp: '127.0.0.1'
-        replace: '0.0.0.0 '
+        regexp: '127\.0\.0\.1'
+        replace: '0.0.0.0'
 
-    - name: Start service foo, based on running process /usr/bin/foo
+    - name: Start and enable MongoDB service
       ansible.builtin.service:
-        name: mongodb
+        name: mongod
         state: started
         enabled: yes

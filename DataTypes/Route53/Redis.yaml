@@ -1,5 +1,5 @@
 - name: creating redis 
-  hosts: local
+  hosts: redis
   become: yes
 
   tasks:

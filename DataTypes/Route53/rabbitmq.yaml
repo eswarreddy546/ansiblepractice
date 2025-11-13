@@ -5,8 +5,8 @@
   tasks: 
     - name: moving we are using the copy data
       ansible.builtin.copy:
-      src: rabbitmq.repo
-      dest: /etc/yum.repos.d/rabbitmq.repo 
+       src: rabbitmq.repo
+       dest: /etc/yum.repos.d/rabbitmq.repo 
 
     - name: now i am installing rabbitmq
       ansible.buildin.package:

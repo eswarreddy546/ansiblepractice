@@ -10,14 +10,14 @@
 
     - name: now i am installing rabbitmq
       ansible.buildin.package:
-       name: rabbitmq-server
-       state: present
+        name: rabbitmq-server
+        state: present
   
     - name: Enable service httpd, and not touch the state
       ansible.builtin.service:
        name: rabbitmq-server
        enabled: yes
-      state: started
+       state: started
  
 
     - name: here we are creating rabbitmq user

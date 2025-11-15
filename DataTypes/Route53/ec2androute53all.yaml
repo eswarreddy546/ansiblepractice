@@ -11,10 +11,7 @@
        - mongodb
        - mysql
        - redis
-       - rabbitmq
-       - cart
-       - user
-
+      
     # we can pass instances through command line using -e
     # instances: 
     # - mongodb

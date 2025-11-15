@@ -3,17 +3,15 @@
   connection: local
   vars:
     ami_id: ami-09c813fb71547fc4f
-    sg_id: sg-0def8440e04260e46 # replace with your SG ID
-    zone_id: "Z04942961NBG75UTT7C0L" # replace with your ID
+    sg_id: sg-08d0531dac0b29c1e # replace with your SG ID
+    zone_id: "Z07053511VV91SNG7YVKI" # replace with your ID
     domain_name: "eswar.xyz"
     instances:
     # i am commneting this and we are directly write creation of ec2 through cli console
        - mongodb
        - mysql
        - redis
-       - user
-       - cart
-       - demo
+       
       
     # we can pass instances through command line using -e
     # instances: 

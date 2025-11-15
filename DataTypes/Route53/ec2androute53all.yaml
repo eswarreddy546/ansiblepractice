@@ -1,16 +1,26 @@
 - name: create ec2 and r53
-  hosts: localhost
+  hosts: local
   connection: local
-
   vars:
     ami_id: ami-09c813fb71547fc4f
-    sg_id: sg-0def8440e04260e46
-    zone_id: "Z04942961NBG75UTT7C0L"
+    sg_id: sg-0def8440e04260e46 # replace with your SG ID
+    zone_id: "Z04942961NBG75UTT7C0L" # replace with your ID
     domain_name: "eswar.xyz"
     instances:
-      - mongodb
-      - mysql
-      - redis
+    # i am commneting this and we are directly write creation of ec2 through cli console
+       - mongodb
+       - mysql
+       - redis
+       - user
+       - cart
+       - demo
+      
+    # we can pass instances through command line using -e
+    # instances: 
+    # - mongodb
+    # - redis
+    # - mysql
+    # - rabbitmq
 
   tasks:
     - name: create ec2 instance
@@ -24,13 +34,19 @@
       loop: "{{ instances }}"
       register: ec2_output
 
+
+    # - name: print the ec2_output
+    #   ansible.builtin.debug:
+    #     msg: "{{ ec2_output }}"
+
+
     - name: create route53 record
       amazon.aws.route53:
         state: present
-        zone: "{{ zone_id }}"   # FIXED
-        record: "{{ item.item }}.{{ domain_name }}"
+        zone: "{{ domain_name }}"
+        record: "{{ item.item }}.{{ domain_name }}" # mongodb.daws86s.fun
         type: A
         ttl: 1
-        value: "{{ item.instance[0].private_ip_address }}"   # FIXED
+        value: "{{ item.instances[0].private_ip_address }}"
         overwrite: true
-      loop: "{{ ec2_output.results }}"   # FIXED
+      loop: "{{ ec2_output.results }}"

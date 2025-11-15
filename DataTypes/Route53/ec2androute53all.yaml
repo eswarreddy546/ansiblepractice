@@ -4,8 +4,8 @@
 
   vars:
     ami_id: ami-09c813fb71547fc4f
-    sg_id: sg-08d0531dac0b29c1e
-    subnet_id: subnet-0b9b1be1ad6418613
+    sg_id: sg-06ca97ef87e112be8
+    subnet_id: subnet-0a708d85290f08a35
     region: us-east-1
     zone_id: "Z07053511VV91SNG7YVKI"
     domain_name: "eswar.xyz"
@@ -17,8 +17,7 @@
       - user
       - cart
       - demo
-      - demo2
-      - demo3
+      
 
   tasks:
 

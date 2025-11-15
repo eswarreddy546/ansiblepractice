@@ -5,8 +5,8 @@
   vars:
     ami_id: ami-09c813fb71547fc4f
     sg_id: sg-08d0531dac0b29c1e
-    subnet_id: subnet-0b9b1be1ad6418613     # ⭐ YOU PROVIDED
-    region: us-east-1                       # ⭐ YOU PROVIDED
+    subnet_id: subnet-0b9b1be1ad6418613
+    region: us-east-1
     zone_id: "Z07053511VV91SNG7YVKI"
     domain_name: "eswar.xyz"
 
@@ -26,16 +26,15 @@
       amazon.aws.ec2_instance:
         name: "{{ item }}"
         instance_type: t2.small
-        region: "{{ region }}"            # ⭐ REQUIRED
+        region: "{{ region }}"
         image_id: "{{ ami_id }}"
-        vpc_subnet_id: "{{ subnet_id }}"  # ⭐ REQUIRED
+        vpc_subnet_id: "{{ subnet_id }}"
         security_group: "{{ sg_id }}"
         wait: yes
         tags:
           Name: "{{ item }}"
       loop: "{{ instances }}"
       register: ec2_output
-
 
     - name: create route53 record
       amazon.aws.route53:
@@ -44,6 +43,6 @@
         record: "{{ item.item }}.{{ domain_name }}"
         type: A
         ttl: 1
-        value: "{{ item.instances[0].private_ip_address }}"
+        value: "{{ item.instances[0].public_ip_address }}"   # ⭐ PUBLIC IP
         overwrite: true
       loop: "{{ ec2_output.results }}"

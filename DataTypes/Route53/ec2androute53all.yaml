@@ -5,8 +5,8 @@
   vars:
     ami_id: ami-09c813fb71547fc4f
     sg_id: sg-08d0531dac0b29c1e
-    subnet_id: subnet-0b9b1be1ad6418613
-    region: us-east-1
+    subnet_id: subnet-0b9b1be1ad6418613     # ⭐ YOU PROVIDED
+    region: us-east-1                       # ⭐ YOU PROVIDED
     zone_id: "Z07053511VV91SNG7YVKI"
     domain_name: "eswar.xyz"
 
@@ -17,7 +17,7 @@
       - user
       - cart
       - demo
-      - demo2 
+      - demo2
       - demo3
 
   tasks:
@@ -25,15 +25,12 @@
     - name: create ec2 instance
       amazon.aws.ec2_instance:
         name: "{{ item }}"
-        instance_type: t2.small
-        region: "{{ region }}"
+        instance_type: t3.micro
+        region: "{{ region }}"            # ⭐ REQUIRED
         image_id: "{{ ami_id }}"
-        vpc_subnet_id: "{{ subnet_id }}"
+        vpc_subnet_id: "{{ subnet_id }}"  # ⭐ REQUIRED
         security_group: "{{ sg_id }}"
         wait: yes
-
-        assign_public_ip: true        # ⭐⭐ PUBLIC IP ENABLE ⭐⭐
-
         tags:
           Name: "{{ item }}"
       loop: "{{ instances }}"
@@ -47,9 +44,6 @@
         record: "{{ item.item }}.{{ domain_name }}"
         type: A
         ttl: 1
-
-        # If you want public IP in DNS
-        value: "{{ item.instances[0].public_ip_address }}"   # ⭐⭐ UPDATED ⭐⭐
-
+        value: "{{ item.instances[0].private_ip_address }}"
         overwrite: true
       loop: "{{ ec2_output.results }}"

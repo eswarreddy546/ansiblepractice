@@ -1,5 +1,5 @@
 - name: Creating MongoDB
-  hosts: mongodb
+  hosts: mongodbs
   become: yes
 
   tasks:
